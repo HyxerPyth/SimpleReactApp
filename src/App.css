@@ -14,25 +14,7 @@
     /* grid-gap: 10px; */
 }
 
-.header {
-  grid-area: h;
-  background-color: #131416;
-}
 
-.header img {
-  width: 100px;
-}
 
-.nav {
-  grid-area: n;
-  background-color: #131416;
-}
 
-.content {
-  grid-area: c;
-  background-color: #131416;
-}
 
-.content img {
-  width: 1000px;
-}
