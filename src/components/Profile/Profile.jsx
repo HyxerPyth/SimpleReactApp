@@ -1,19 +1,15 @@
-import React from "react";
+import React from "react"; 
 import s from "./Profile.module.css";
 import MyPosts from "./MyPosts/MyPosts";
+import Profileinfo from "./Profileinfo/Profileinfo";
 
 const Profile = () => {
     return (
-      <div className={s.content}>
       <div>
-      <img src="https://wallpaperaccess.com/full/1918192.jpg"></img>
+        <Profileinfo />
+        <MyPosts />
       </div>
-      <div>
-        ava + description
-      </div>
-      <MyPosts />
-    </div>
-    )
+    );
 }
 
 export default Profile;

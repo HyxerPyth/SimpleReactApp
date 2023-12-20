@@ -1,8 +1,7 @@
-.content {
-    grid-area: c;
-    background-color: #131416;
-  }
-  
-.item img {
-  width: 50px;
+.posts {
+  margin-top: 10px;
+}
+
+.postsBlocks {
+  padding: 10px;
 }
