@@ -9,7 +9,7 @@ const Post = (props) => {
             <img src="https://cdn3.iconfinder.com/data/icons/avatar-set/512/Avatar01-512.png"></img>
             { props.message }
               <div>
-              <span>like</span>
+              <span>like { props.likesCount }</span>
             </div>
           </div>
     )

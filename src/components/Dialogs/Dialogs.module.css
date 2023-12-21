@@ -12,6 +12,11 @@
     padding: 30px;
 }
 
-.dialogsItems .active {
-    color: goldenrod
+.dialogsItems a.active {
+    color: goldenrod;
+}
+
+.dialogsItems a {
+    color: #333;
+    text-decoration: none;
 }
