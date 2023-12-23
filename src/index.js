@@ -19,12 +19,17 @@ let messages= [
   {id: 3,message: "What's up, bro!"}
 ]
 
-
+let postData = [
+  {id: 1, message: "Hi, how are you?", likesCount: 11},
+  {id: 2, message: "It's my first post", likesCount: 23},
+  {id: 2, message: "It's my first post", likesCount: 23},
+  {id: 2, message: "It's my first post", likesCount: 23}
+]
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App messages={messages} dialogsData={dialogsData}/>
+    <App messages={messages} dialogsData={dialogsData} postData={postData}/>
   </React.StrictMode>
 );
 
