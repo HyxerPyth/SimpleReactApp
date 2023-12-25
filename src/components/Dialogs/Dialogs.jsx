@@ -3,17 +3,20 @@ import s from "./Dialogs.module.css";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 
+
+const setActive = ({isActive}) => ({color: isActive ? "#0071e3" : "var(--color-active"});
+
 const Dialogs = (props) => {
 
 
-    let dialogsElements = props.dialogsData.map( d => <DialogItem name={d.name} id={d.id}/> );
+    let dialogsElements = props.state.dialogsData.map( d => <DialogItem key={d.id} name={d.name} id={d.id} style={setActive}/> );
 
-    let messagesElements = props.messages.map( m => <Message message={m.message}/> );
+    let messagesElements = props.state.messages.map( m => <Message key={m.id} message={m.message}/> );
 
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                {dialogsElements}
+                {dialogsElements} 
             </div>
             <div className={s.messages}>
                 {messagesElements}
