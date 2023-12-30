@@ -6,10 +6,13 @@ import Friends from "./Friends/Friends";
 const setActive = ({isActive}) => ({color: isActive ? '#0071e3' : 'var(--color-active)'});
 
 
-let friendsData = props.state.sideBar.friends.map(f => <Friends key={f.id} name={f.name}/> );
+
 
 
 const Nav = (props) => {
+
+    let friendsData = props.state.map(f => <Friends key={f.id} name={f.name} profileImage={f.profileImage} /> );
+
     return (
         <nav className={s.nav}>
           <div className={s.item}>
@@ -27,11 +30,11 @@ const Nav = (props) => {
           <div className={s.item}>
             <NavLink to="/settings" style={setActive}>Settings</NavLink>
           </div>
-          <div>
-            <Friends friend={props.state.sideBar.friends} />
+          <div className={s.friendsData}>
+            {friendsData}
           </div>
         </nav>
-    )
+    );
 }
 
 export default Nav;

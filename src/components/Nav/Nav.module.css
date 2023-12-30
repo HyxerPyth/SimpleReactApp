@@ -20,3 +20,22 @@
   color: #333;
   text-decoration: none;
 }
+
+.friendsBox {
+  grid-template-areas: 
+    "p p p"
+    "f f f";
+
+}
+
+.profileImage {
+  grid-area: p;
+  width: 20px;
+  display: inline-block;
+  vertical-align: middle
+
+}
+
+.friendsData {
+  grid-area: f;
+}

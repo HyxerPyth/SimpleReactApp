@@ -33,9 +33,9 @@ let state = {
     sideBar: {
 
         friends: [
-            {id: 1, name: "Josh"},
-            {id: 2, name: "Ken"},
-            {id: 3, name: "Thomas"}
+            {id: 1, name: "Josh", profileImage: "https://cdn3.iconfinder.com/data/icons/avatar-set/512/Avatar01-512.png"},
+            {id: 2, name: "Ken", profileImage: "https://cdn3.iconfinder.com/data/icons/avatar-set/512/Avatar01-512.png"},
+            {id: 3, name: "Thomas", profileImage: "https://cdn3.iconfinder.com/data/icons/avatar-set/512/Avatar01-512.png"}
         ]
 
     }
