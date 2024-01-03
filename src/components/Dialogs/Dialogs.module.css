@@ -8,6 +8,10 @@
     padding: 30px;
 }
 
+.textarea {
+    padding: 50px;
+}
+
 .dialogsItems {
     border-right: 0.1px solid #333;
 }
@@ -30,3 +34,4 @@
     height: 50px;
     
 }
+

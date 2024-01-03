@@ -21,7 +21,7 @@
   text-decoration: none;
 }
 
-.friendsBox {
+.SideBarBox {
   grid-template-areas: 
     "p p p"
     "f f f";
@@ -36,6 +36,6 @@
 
 }
 
-.friendsData {
+.SideBar {
   grid-area: f;
 }
