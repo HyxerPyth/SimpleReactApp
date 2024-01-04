@@ -1,3 +1,5 @@
+import { rerenderEntireTree } from "../render";
+
 let state = {
 
     profilePage: {
@@ -38,8 +40,26 @@ let state = {
             {id: 3, name: "Thomas", profileImage: "https://cdn3.iconfinder.com/data/icons/avatar-set/512/Avatar01-512.png"}
         ]
 
+    },
+
+    addPostText: {
+        
+        postArea: [
+            {id: 1, message: ""}
+        ]
     }
 
+}
+
+
+export let addPostArea = (postMessage) => {
+    let postArea = {
+        id: (state.addPostText.postArea[0] + 1),
+        message: postMessage
+    };
+
+    state.addPostText.postArea.push(postArea);
+    rerenderEntireTree(state);
 }
 
 export let addPost = (postMessage) => {
@@ -50,6 +70,9 @@ export let addPost = (postMessage) => {
     };
 
     state.profilePage.postData.push(newPost);
+    rerenderEntireTree(state);
 }
+
+
 
 export default state;
