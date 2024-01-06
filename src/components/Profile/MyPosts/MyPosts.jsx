@@ -17,7 +17,6 @@ const MyPosts = (props) => {
  
     let textEdit = newPostElemnt.current.value;
     props.addPostArea(textEdit);
-    debugger;
   }
 
     return (
