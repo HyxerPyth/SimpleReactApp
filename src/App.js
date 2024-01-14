@@ -9,15 +9,16 @@ import News from "./components/News/News.jsx"
 import Music from "./components/Music/Music.jsx"
 import Settings from "./components/Settings/Settings.jsx"
 
+
 const App = (props) => {
   return (
       <div className="app-wrapper">
           <Header />
-          <Nav state={props.state.sideBar.friends}/>
+          <Nav store={props.store.sideBar}/>
           <div className="app-wrapper-content"> 
             <Routes>
-              <Route path="/dialogs" element={<Dialogs state={props.store.state.dialogsPage} />} />
-              <Route path="/profile" element={<Profile state={props.store.state.profilePage} addPost={props.store.state.addPost} addPostArea={props.store.state.addPostArea} />} />
+              <Route path="/dialogs" element={<Dialogs store={props.store.dialogsPage} />} />
+              <Route path="/profile" element={<Profile store={props.store.profilePage} addPost={props.store.addPost} addPostArea={props.store.addPostArea} />} />
               <Route path="/news" element={<News />} />
               <Route path="/music" element={<Music />} />
               <Route path="/settings" element={<Settings />} />
@@ -25,7 +26,9 @@ const App = (props) => {
           </div>
       </div>
   );
-}
+} 
+
+
 
 
 

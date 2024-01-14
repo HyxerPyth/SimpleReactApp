@@ -1,10 +1,6 @@
-class store {
+let store = {
 
-    rerenderEntireTree () {
-        console.log("State changed")
-    };
-
-    state = {
+    _state: {
 
         profilePage: {
 
@@ -13,7 +9,7 @@ class store {
                 {id: 2, message: "It's my first post", likesCount: 23},
                 {id: 2, message: "It's my first post", likesCount: 23},
                 {id: 2, message: "It's my first post", likesCount: 23}
-            ],
+            ]
 
         },
 
@@ -31,7 +27,7 @@ class store {
                 {id: 3,name: "Donald"},
                 {id: 4,name: "Nick"},
                 {id: 5,name: "Jack"} 
-            ],
+            ]
             
 
         },
@@ -43,7 +39,6 @@ class store {
                 {id: 2, name: "Ken", profileImage: "https://cdn3.iconfinder.com/data/icons/avatar-set/512/Avatar01-512.png"},
                 {id: 3, name: "Thomas", profileImage: "https://cdn3.iconfinder.com/data/icons/avatar-set/512/Avatar01-512.png"}
             ]
-
         },
 
         addPostText: {
@@ -51,41 +46,47 @@ class store {
             postArea: [
                 {id: 1, message: ""}
             ]
+        },
+
+        _callSubscriber () {
+            console.log("State changed")
         }
+    },
 
-    }
-
-
-    static addPostArea = (postMessage) => {
+    getState () {
+        return this._state;
+    },
+    
+    addPostArea (postMessage) {
         let postArea = {
-            id: (store.state.addPostText.postArea[0] + 1),
+            id: (store.this._state.addPostText.postArea[0] + 1),
             message: postMessage
         };
 
-        store.state.addPostText.postArea.push(postArea);
-    }
+        store.getState().addPostText.postArea.push(postArea);
+    },
 
     //Add post need to be exported
 
-    static addPost = (postMessage) => {
+    addPost (postMessage) {
         let newPost = {
             id: 5,
             message: postMessage,
             likesCount: 0
         };
 
-        store.state.profilePage.postData.push(newPost);
-        store.rerenderEntireTree(store.state);
-    }
+        store.this._state.profilePage.postData.push(newPost);
+        store.this._state._callSubscriber(store.this._state);
+    },
 
     //subscrive need to be exported
 
 
-    static subscribe = (observer) => {
-        store.rerenderEntireTree = observer;
+    subscribe (observer) {
+        store.this._state._callSubscriber = observer;
     }
 
-    
-};
+}
 
 export default store;
+window.store = store;
