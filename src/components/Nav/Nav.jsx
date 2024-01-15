@@ -7,7 +7,7 @@ const setActive = ({isActive}) => ({color: isActive ? '#0071e3' : 'var(--color-a
 
 
 const Nav = (props) => {
-    let SideBarElement = props.store.friends.map(f => <SideBar key={f.id} name={f.name} profileImage={f.profileImage} /> );
+    let SideBarElement = props.state.friends.map(f => <SideBar key={f.id} name={f.name} profileImage={f.profileImage} /> );
     return (
         <nav className={s.nav}>
           <div className={s.item}>
