@@ -59,7 +59,7 @@ let store = {
     
     addPostArea (postMessage) {
         let postArea = {
-            id: (store.this._state.addPostText.postArea[0] + 1),
+            id: (store.getState().addPostText.postArea[0] + 1),
             message: postMessage
         };
 
@@ -75,15 +75,15 @@ let store = {
             likesCount: 0
         };
 
-        store.this._state.profilePage.postData.push(newPost);
-        store.this._state._callSubscriber(store.this._state);
+        store.getState().profilePage.postData.push(newPost);
+        store.getState()._callSubscriber(store.this._state);
     },
 
     //subscrive need to be exported
 
 
     subscribe (observer) {
-        store.this._state._callSubscriber = observer;
+        store.getState()._callSubscriber = observer;
     }
 
 }
