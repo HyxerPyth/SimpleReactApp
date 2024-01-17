@@ -56,36 +56,32 @@ let store = {
     getState () {
         return this._state;
     },
-    
-    addPostArea (postMessage) {
-        let postArea = {
-            id: (store.getState().addPostText.postArea[0] + 1),
-            message: postMessage
-        };
 
-        store.getState().addPostText.postArea.push(postArea);
+    updateNewPostText (newText) {
+        this._state.profilePage.newPostText = newText;
+        this._state._callSubscriber(this._state);
     },
-
-    //Add post need to be exported
-
-    addPost (postMessage) {
-        let newPost = {
-            id: 5,
-            message: postMessage,
-            likesCount: 0
-        };
-
-        store.getState().profilePage.postData.push(newPost);
-        store.getState()._callSubscriber(store.this._state);
-    },
-
-    //subscrive need to be exported
 
 
     subscribe (observer) {
-        store.getState()._callSubscriber = observer;
-    }
+        this._state._callSubscriber = observer;
+    },
 
+    dispatch(action) { // {type: 'ADD-POST'} 
+        if (action.type === 'ADD-POST') {
+                let newPost = {
+                    id: 5,
+                    message: postMessage,
+                    likesCount: 0
+                };
+
+                this._state.profilePage.postData.push(newPost);
+                this._state._callSubscriber(this._state);
+            } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+                this._state.addPostText.postArea = action.newText;
+                this._state._callSubscriber(this._state); 
+            }
+    }
 }
 
 export default store;

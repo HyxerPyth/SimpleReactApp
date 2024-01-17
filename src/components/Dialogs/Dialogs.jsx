@@ -7,9 +7,9 @@ import Message from "./Message/Message";
 const setActive = ({isActive}) => ({color: isActive ? "#0071e3" : "var(--color-active"});
 
 const Dialogs = (props) => {
-    let dialogsElements = props.store.dialogsData.map( d => <DialogItem key={d.id} name={d.name} id={d.id} style={setActive}/> );
+    let dialogsElements = props.state.dialogsData.map( d => <DialogItem key={d.id} name={d.name} id={d.id} style={setActive}/> );
 
-    let messagesElements = props.store.messages.map( m => <Message key={m.id} message={m.message}/> );
+    let messagesElements = props.state.messages.map( m => <Message key={m.id} message={m.message}/> );
 
     return (
         <div className={s.dialogs}>
