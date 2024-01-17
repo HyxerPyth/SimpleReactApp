@@ -9,7 +9,8 @@ let store = {
                 {id: 2, message: "It's my first post", likesCount: 23},
                 {id: 2, message: "It's my first post", likesCount: 23},
                 {id: 2, message: "It's my first post", likesCount: 23}
-            ]
+            ],
+            newPostText: ""
 
         },
 
@@ -57,12 +58,6 @@ let store = {
         return this._state;
     },
 
-    updateNewPostText (newText) {
-        this._state.profilePage.newPostText = newText;
-        this._state._callSubscriber(this._state);
-    },
-
-
     subscribe (observer) {
         this._state._callSubscriber = observer;
     },
@@ -74,9 +69,9 @@ let store = {
                     message: postMessage,
                     likesCount: 0
                 };
-
                 this._state.profilePage.postData.push(newPost);
                 this._state._callSubscriber(this._state);
+
             } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
                 this._state.addPostText.postArea = action.newText;
                 this._state._callSubscriber(this._state); 
