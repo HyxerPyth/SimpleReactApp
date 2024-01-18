@@ -10,7 +10,8 @@ let store = {
                 {id: 2, message: "It's my first post", likesCount: 23},
                 {id: 2, message: "It's my first post", likesCount: 23}
             ],
-            newPostText: ""
+
+            updatePostArea: ""
 
         },
 
@@ -42,13 +43,6 @@ let store = {
             ]
         },
 
-        addPostText: {
-            
-            postArea: [
-                {id: 1, message: ""}
-            ]
-        },
-
         _callSubscriber () {
             console.log("State changed")
         }
@@ -66,14 +60,14 @@ let store = {
         if (action.type === 'ADD-POST') {
                 let newPost = {
                     id: 5,
-                    message: postMessage,
+                    message: this._state.profilePage.updatePostArea,
                     likesCount: 0
                 };
                 this._state.profilePage.postData.push(newPost);
                 this._state._callSubscriber(this._state);
 
-            } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-                this._state.addPostText.postArea = action.newText;
+            } else if (action.type === 'UPDATE-POST-AREA') {
+                this._state.profilePage.updatePostArea = action.newText;
                 this._state._callSubscriber(this._state); 
             }
     }
