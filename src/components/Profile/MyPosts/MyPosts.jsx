@@ -12,7 +12,9 @@ const MyPosts = (props) => {
   let newPostElement = React.createRef(); 
 
   let addPost = () => { 
+    let clearArea = updatePostAreaActionCreator("");
     props.dispatch(addPostActionCreator());
+    props.dispatch(clearArea);
   }
 
   let onPostChange = () => {

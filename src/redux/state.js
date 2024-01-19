@@ -79,7 +79,7 @@ let store = {
             }
     },
 
-    dispatch(action) { // { type: "SEND-MESSAGE" }
+    dispatchDialogs(action) { // { type: "SEND-MESSAGE" }
         if (action.type === "SEND-MESSAGE") {
             let sendMessage = { 
                 id: 4,

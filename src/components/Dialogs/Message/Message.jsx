@@ -6,7 +6,9 @@ const Message = (props) => {
     let newMessageElement = React.createRef();
 
     let sendMessage = () => {
+        let clearArea = updateMessageAreaActionCreator("");
         props.dispatch(sendMessageActionCreator());
+        props.dispatch(clearArea)
     };
 
     let updateMessageArea = () => {
