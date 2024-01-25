@@ -1,14 +1,21 @@
 .dialogs {
     display: grid;
+    grid-template-areas: 
+        "de m"
+        "de ma";
+
     grid-template-columns: 3fr 10fr;
+    grid-template-rows: 1.7fr 0.3fr;
 }
 
 
 .messages {
+    grid-area: m;
     padding: 30px;
 }
 
 .textarea {
+    grid-area: ma;
     padding: 10px;
 }
 
@@ -16,22 +23,22 @@
     border-right: 0.1px solid #333;
 }
 
-.dialogsItems a.active {
+.dialog a.active {
     color: goldenrod;
 }
 
-.dialogsItems a {
+.dialog a {
     color: #333;
     text-decoration: none;
 }
 
 .dialog {
+    grid-area: de;
     background-color: white;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.09);
     border-radius: 2%;
     line-height: 50px;
     margin: 3px;
     height: 50px;
-    
 }
 

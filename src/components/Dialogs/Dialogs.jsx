@@ -8,7 +8,7 @@ const setActive = ({isActive}) => ({color: isActive ? "#0071e3" : "var(--color-a
 
 const Dialogs = (props) => {
     let dialogsElements = props.state.dialogsData.map( d => <DialogItem key={d.id} name={d.name} id={d.id} style={setActive}/> );
-    let messagesElements = props.state.messages.map( m => <Message key={m.id} message={m.message} dispatch={props.dispatchDialogs} updateMessageArea={ props.state.updateMessageArea }/> );
+    let messagesElements = props.state.messages.map( m => <Message key={m.id} message={m.message} dispatch={props.dispatch} updateMessageArea={ props.state.updateMessageArea }/> );
 
     return (
         <div className={s.dialogs}>
@@ -17,6 +17,8 @@ const Dialogs = (props) => {
             </div>
             <div className={s.messages}>
                 {messagesElements}
+            </div>
+            <div>
             </div>
         </div>
     );
