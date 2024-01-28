@@ -7,7 +7,7 @@ import MyPosts from "./MyPosts";
 
 const MyPostsContainer = (props) => {
 
-  let state = props.store.getState().postData;
+  let state = props.store.getState().profilePage.postData;
 
   let addPost = () => { 
     let clearArea = updatePostAreaActionCreator("");
